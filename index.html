@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <base target="_blank" rel="noopener noreferrer">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ENIGMA-Epilepsy Consortium</title>
@@ -14,9 +15,10 @@
         <li><a href="#about">About</a></li>
         <li><a href="#activities">Activities</a></li>
         <li><a href="#research">Research</a></li>
-        <li><a href="#secondary_proposals">Secondary Proposals</a></li>
         <li><a href="#sites">Sites</a></li>
-        <li><a href="#systems_overview">Systems Overview</a></li>
+        <li><a href="#secondary_proposals">Proposals</a></li>
+        <li><a href="#systems_overview">Systems</a></li>
+        <li><a href="#submission">Submissions</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -169,9 +171,9 @@
         We collaborate with a wide range of world leading research groups and clinical centers around the world. 
         All these sites have shared MRI data and demographic/clinical covariates with the consortium. Sites of note: </p>
         <ul>
-        <li><a>UCSD: ENIGMA-Epilepsy Central processing. Co-chair Carrie McDonald. Project coordinator Sean Hatton.</a></li>
+        <li><a>UCSD: ENIGMA-Epilepsy Central processing. Co-chair Carrie McDonald. Project CSoordinator Sean Hatton.</a></li>
         <li><a>UCL: Co-chair: Sanjay Sisodiya.
-        <li><a>USC: ENIGMA central: Paul M. Thompson</a></li>
+        <li><a>USC: ENIGMA Central: Paul M. Thompson</a></li>
       </ul>
         Current statistics on ENIGMA:
         <a href="https://my.ctri.ucsd.edu/surveys/?__dashboard=HYHHJF9WTW3">Dynamic ENIGMA-Epilepsy Summary Dashboard</a>
@@ -498,7 +500,7 @@
        <a href="https://github.com/McDonald-Lab/LOCIPipe_v0.2">LOCIPipe</a>. The pipeline features BIDS-compliable, 
        containerized pipelines for extracting the following data (Figure 1):</p>
 
-    <h4>Preprocessing:</h4>
+    <h3>Preprocessing:</h3>
     <ul>
         <li><strong>MRIQC:</strong> Extracting IQM from raw MRI data. <a href="https://mriqc.readthedocs.io/">https://mriqc.readthedocs.io/</a></li>
         <li><strong>QSIPrep:</strong> Automatically generated DWI preprocessing pipelines that will group, distortion correct, 
@@ -508,7 +510,7 @@
            <a href="https://fmriprep.org/">https://fmriprep.org/</a></li>
     </ul>
 
-    <h4>Processing:</h4>
+    <h3>Processing:</h3>
     <ul>
         <li><strong>FreeSurfer:</strong> Segments and parcellates T1-weighted structural MRIs into anatomical models of the 
           human brain. <a href="https://surfer.nmr.mgh.harvard.edu/">https://surfer.nmr.mgh.harvard.edu/</a></li>
@@ -519,7 +521,7 @@
           <a href="https://qsirecon.readthedocs.io/">https://qsirecon.readthedocs.io/</a></li>
     </ul>
 
-    <h4>Postprocessing:</h4>
+    <h3>Postprocessing:</h3>
     <ul>
         <li><strong>FSQC:</strong> FreeSurfer QC pipeline extracts IQMs from processed FreeSurfer data.
            <a href="https://github.com/Deep-MI/fsqc">https://github.com/Deep-MI/fsqc</a></li>
@@ -527,19 +529,23 @@
           used from FreeSurfer QC. <a href="https://surfer.nmr.mgh.harvard.edu/fswiki/mris_euler_number">https://surfer.nmr.mgh.harvard.edu/fswiki/mris_euler_number</a></li>
     </ul>
 
+    <p style="text-align: center;">
+      <img height="1248" src="images/pipeline.png" width="680" alt="ENIGMA-Epilepsy LOCIPipeline Architecture">
+    </p>
     <p><strong>Figure 1. ENIGMA-Epilepsy LOCIPipeline Architecture</strong></p>
 
     <h3>Demographic and clinical covariate management</h3>
     <p>Site-level demographic and clinical covariate are centrally managed using REDCap (Research Electronic Data Capture), 
       a secure, web-based software platform designed to build and manage online databases and surveys.</p>
+    </section>
+    <section id="submission">    
+      <h2>Submitting Data to the ENIGMA-Epilepsy Consortium</h2>
 
-    <h3>Submitting data to the ENIGMA-Epilepsy Consortium</h3>
-
-    <h4>Data Use Agreement and Memorandum of Understanding</h4>
+    <h3>Data Use Agreement and Memorandum of Understanding</h3>
     <p>Prior to the transfer of data, the site is required to complete a Data Use Agreement (DUA). Each person that will be handling 
       ENIGMA-Epilepsy Consortium data needs to complete a Memorandum of Understanding (MOU). Forms are available from <a href="mailto:sehatton@health.ucsd.edu">sehatton@health.ucsd.edu</a>.</p>
 
-    <h4>Preparing MRI data</h4>
+    <h3>Preparing MRI data</h3>
     <p>MRI data is to be provided as DICOMs (e.g. one subject/session per folder) or NIFTI with JSON sidecar. If you are converting from 
       DICOMs to NIFTI/JSONs we recommend using either <a href="https://unfmontreal.github.io/Dcm2Bids/3.2.0/">dcm2bids</a> or 
       <a href="https://bidscoin.readthedocs.io/en/latest/">BIDScoin</a>. We are HIPAA, GDPR, and GCP compliant: please anonymize to 
@@ -552,11 +558,11 @@
         <li><strong>PhaseEncodingDirection:</strong> For EPI, ASL, fMRI-BOLD, and DWI images, ensure they have the "PhaseEncodingDirection" field, e.g.: "PhaseEncodingDirection": "j-"</li>
     </ul>
 
-    <h4>Preparing demographic and clinical covariates</h4>
+    <h3>Preparing demographic and clinical covariates</h3>
     <p>The full data dictionary of demographic and clinical covariates is available as a PDF for reference. A shortened Word document version is also 
       available which lists the core covariates that must be included for participation in secondary projects. The covariate file can be submitted as a CSV or Excel file.</p>
 
-    <h4>Data transfer method</h4>
+    <h3>Data transfer method</h3>
     <p>Data (MRI and demographic/clinical covariate information) are transferred via box.com. When you are ready, send an email 
       to <a href="mailto:sehatton@health.ucsd.edu"></a>sehatton@health.ucsd.edu</a> and you will be provided with a link to drag-and-drop the data in.</p>
     </section>

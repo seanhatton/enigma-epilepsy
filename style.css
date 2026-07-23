@@ -95,10 +95,11 @@ nav li {
 nav a {
   text-decoration: none;
   color: var(--text);
-  font-weight: 600;
-  padding: 0.45rem 0.75rem;
+  font-weight: 500;
+  padding: 0.3rem 0.55rem;
   border-radius: 999px;
   transition: all 0.2s ease;
+  font-size: 0.875rem;
 }
 
 nav a:hover,

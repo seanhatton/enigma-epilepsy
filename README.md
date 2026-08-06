@@ -15,11 +15,11 @@ The ENIGMA Epilepsy Working Group aims to improve our understanding of the in vi
 - Neuroimaging
 - Genetics
 - Artificial Intelligence
-- [Publications](https://enigma-epilepsy.github.io/enigma-epilepsy/)
 
 ## Sites and Resources
-- [Dynamic ENIGMA-Epilepsy Summary Dashboard](https://enigma-epilepsy.github.io/enigma-epilepsy/)
-- Current ENIGMA-Epilepsy sites and collaborators
+- [ENIGMA-Epilepsy website](https://enigma-epilepsy.github.io/enigma-epilepsy/)
+- [ENIGMA-Epilepsy sites and collaborators](https://enigma-epilepsy.github.io/enigma-epilepsy/#sites)
+- [Publications](https://enigma-epilepsy.github.io/enigma-epilepsy/#research)
 
 ## Contact Us
 If your group is interested in contributing to ENIGMA-Epilepsy, please contact:

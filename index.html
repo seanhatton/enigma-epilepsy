@@ -555,15 +555,17 @@
 
     <h3>Preparing MRI data</h3>
     <p>MRI data is to be provided as DICOMs (e.g. one subject/session per folder) or NIFTI with JSON sidecar. If you are converting from 
-      DICOMs to NIFTI/JSONs we recommend using either <a href="https://unfmontreal.github.io/Dcm2Bids/3.2.0/">dcm2bids</a> or 
-      <a href="https://bidscoin.readthedocs.io/en/latest/">BIDScoin</a>. We are HIPAA, GDPR, and GCP compliant: please anonymize to 
-      remove identifying header information (dates, names, addresses etc.). MRI data does not need to be defaced as we are not publicly sharing raw MRI data.</p>
-    <p>If you have field maps, during the anonymization process please ensure these header fields are recorded in the JSON:</p>
+      DICOMs to NIFTI/JSONs we recommend using either  <a href="https://unfmontreal.github.io/Dcm2Bids/3.2.0/">dcm2bids</a> or 
+      <a href="https://bidscoin.readthedocs.io/en/latest/">BIDScoin</a>. We are HIPAA, GDPR, and GCP compliant: please anonymize to remove 
+      identifying header information (dates, names, addresses etc.). MRI data does not need to be defaced as we are not publicly sharing raw MRI data.</p>
+    <p>If using fieldmaps, ensure your fieldmaps have:</p>
     <ul>
-        <li><strong>IntendedFor:</strong> E.g. "IntendedFor": ["bids::sub-01/ses-01/dwi/sub-01_ses-01_dir-AP_dwi.nii.gz"]</li>
-        <li><strong>B0FieldIdentifier & B0FieldSource:</strong> E.g. "B0FieldIdentifier": "fmap_run01", "B0FieldSource": "fmap_run01"</li>
-        <li><strong>TotalReadoutTime:</strong> If using EPI files for fieldmap correction, ensure they have "TotalReadoutTime", e.g.: "TotalReadoutTime": 0.00475.</li>
-        <li><strong>PhaseEncodingDirection:</strong> For EPI, ASL, fMRI-BOLD, and DWI images, ensure they have the "PhaseEncodingDirection" field, e.g.: "PhaseEncodingDirection": "j-"</li>
+        <li><strong>IntendedFor:</strong> e.g. "IntendedFor": ["bids::sub-01/ses-01/dwi/sub-01_ses-01_dir-AP_dwi.nii.gz"]</li>
+        <li><strong>B0FieldIdentifier & B0FieldSource:</strong> e.g. "B0FieldIdentifier": "fmap_run01", "B0FieldSource": "fmap_run01"</li>
+        <li><strong>TotalReadoutTime:</strong> e.g.: "TotalReadoutTime": 0.00475. If your image has "EstimatedTotalReadoutTime", copy this as "TotalReadoutTime".</li>
+        <li><strong>PhaseEncodingDirection:</strong> e.g.: "PhaseEncodingDirection": "j-". If your image has “PhaseEncodingAxis”, you can get “PhaseEncodingDirection” by 
+          running dcm2niix on a single un-anonymized subject and copying the value of “PhaseEncodingDirection”. You will need to make sure all other subjects 
+          follow the same phase-encoding-axis.</li>
     </ul>
 
     <h3>Preparing demographic and clinical covariates</h3>
